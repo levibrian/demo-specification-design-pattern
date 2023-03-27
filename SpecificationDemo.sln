@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationDemo.Domain", "SpecificationDemo.Domain\SpecificationDemo.Domain.csproj", "{6345531B-73FC-4F34-A033-9DFD1E8F3AEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationDemo", "SpecificationDemo\SpecificationDemo.csproj", "{6345531B-73FC-4F34-A033-9DFD1E8F3AEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationDemo.Domain.UnitTests", "SpecificationDemo.Domain.UnitTests\SpecificationDemo.Domain.UnitTests.csproj", "{B1F320DA-405B-4149-88CF-A145D9864A53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecificationDemo.UnitTests", "SpecificationDemo.UnitTests\SpecificationDemo.UnitTests.csproj", "{B1F320DA-405B-4149-88CF-A145D9864A53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
