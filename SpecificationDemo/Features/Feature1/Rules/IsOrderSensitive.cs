@@ -10,6 +10,5 @@ public class IsOrderSensitive : ISpecification<Order>
         new IsOrderHighValue()
             .And(new IsOrderInStock())
             .And(new IsOrderHazardous())
-            .IsSatisfiedBy(subject);
-    
+        .IsSatisfiedBy(subject);
 }

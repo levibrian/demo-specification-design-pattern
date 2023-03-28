@@ -11,5 +11,5 @@ public class IsOrderRush : ISpecification<Order>
             .And(new IsOrderHighValue())
             .And(new IsOrderInStock())
             .And(new IsOrderHazardous().Not())
-            .IsSatisfiedBy(subject);
+        .IsSatisfiedBy(subject);
 }
