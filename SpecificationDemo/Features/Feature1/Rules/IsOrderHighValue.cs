@@ -7,7 +7,7 @@ public class IsOrderHighValue : ISpecification<Order>
 {
     private const int HighValueMinimumThreshold = 100;
     
-    public bool IsPrimitiveSatisfiedBy(Order subject)
+    public bool IsSatisfiedBy(Order subject)
     {
         return subject.Total > HighValueMinimumThreshold;
     }

@@ -18,26 +18,26 @@ public class OrSpecification<T> : CompositeSpecification<T>
     {
     }
 
-    public override bool IsPrimitiveSatisfiedBy(T subject)
+    public override bool IsSatisfiedBy(T subject)
     {
         if (!ChildSpecifications.Any()) return true;
             
         var rulesResult = 
             ChildSpecifications
                 .Select(rule => 
-                    rule.IsPrimitiveSatisfiedBy(subject));
+                    rule.IsSatisfiedBy(subject));
 
         return rulesResult.Any(expression => expression);
     }
     
-    public override Result IsSatisfiedBy(T subject)
+    public override Result IsResultSatisfiedBy(T subject)
     {
         if (!ChildResultSpecifications.Any()) return Result.Ok();
             
         var rulesResult = 
             ChildResultSpecifications
                 .Select(rule => 
-                    rule.IsSatisfiedBy(subject))
+                    rule.IsResultSatisfiedBy(subject))
                 .ToList();
 
         return rulesResult.Any(result => result.IsSuccess)

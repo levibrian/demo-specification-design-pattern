@@ -31,7 +31,7 @@ public abstract class CompositeSpecification<TCandidate> : IResultSpecification<
             ChildResultSpecifications.Add(secondSpecification);
         }
 
-        public abstract bool IsPrimitiveSatisfiedBy(TCandidate subject);
+        public abstract bool IsSatisfiedBy(TCandidate subject);
 
-        public abstract Result IsSatisfiedBy(TCandidate entityToEvaluate);
+        public abstract Result IsResultSatisfiedBy(TCandidate entityToEvaluate);
     }

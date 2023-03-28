@@ -6,11 +6,12 @@ namespace SpecificationDemo.Features.Feature1.Rules;
 
 public class IsOrderSensitive : ISpecification<Order>
 {
-    public bool IsPrimitiveSatisfiedBy(Order subject)
+    public bool IsSatisfiedBy(Order subject)
     {
         return
-            new IsOrderHazardous()
-                .And(new IsOrderHighValue())
-                .IsPrimitiveSatisfiedBy(subject);
+            new IsOrderHighValue()
+                .And(new IsOrderInStock())
+                .And(new IsOrderHazardous())
+                .IsSatisfiedBy(subject);
     }
 }

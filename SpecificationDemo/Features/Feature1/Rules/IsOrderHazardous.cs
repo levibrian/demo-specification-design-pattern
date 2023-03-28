@@ -5,7 +5,7 @@ namespace SpecificationDemo.Features.Feature1.Rules;
 
 public class IsOrderHazardous : ISpecification<Order>
 {
-    public bool IsPrimitiveSatisfiedBy(Order subject)
+    public bool IsSatisfiedBy(Order subject)
     {
         return subject
             .Items

@@ -34,7 +34,25 @@ public class Order
         return isRush;
     }
 
-    public bool IsRushOrderGoodExample() => new IsOrderRush().IsPrimitiveSatisfiedBy(this);
+    public bool IsOrderSensitiveBadExample()
+    {
+        var isSensitive = false;
+        
+        if (Total > 100)
+        {
+            if (Items.Any(item => item.IsInStock))
+            {
+                if (Items.Any(item => item.ContainsHazardousMaterial))
+                {
+                    isSensitive = true;
+                }
+            }
+        }
 
-    public bool IsOrderSensitive() => new IsOrderSensitive().IsPrimitiveSatisfiedBy(this);
+        return isSensitive;
+    }
+
+    public bool IsRushOrderGoodExample() => new IsOrderRush().IsSatisfiedBy(this);
+
+    public bool IsOrderSensitiveGoodExample() => new IsOrderSensitive().IsSatisfiedBy(this);
 }

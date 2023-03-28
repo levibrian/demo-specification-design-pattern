@@ -13,12 +13,12 @@ public class NotSpecification<T> : CompositeSpecification<T>
         this.candidate = candidate;
     }
 
-    public override bool IsPrimitiveSatisfiedBy(T subject)
+    public override bool IsSatisfiedBy(T subject)
     {
-        return !candidate.IsPrimitiveSatisfiedBy(subject);
+        return !candidate.IsSatisfiedBy(subject);
     }
 
-    public override Result IsSatisfiedBy(T entityToEvaluate)
+    public override Result IsResultSatisfiedBy(T entityToEvaluate)
     {
         // NOT GOING TO BE USED
         throw new NotImplementedException();

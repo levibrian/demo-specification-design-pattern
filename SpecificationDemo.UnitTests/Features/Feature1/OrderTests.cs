@@ -41,6 +41,40 @@ public class OrderTests
         // Assert
         isRushOrder.Should().BeTrue();
     }
+
+    [Fact]
+    public void IsSensitiveOrder_BadExample_ShouldBeTrue()
+    {
+        // Arrange
+        var mockedOrder = MockOrder(
+            "ARG",
+            true,
+            true,
+            1500);
+
+        // Act
+        var isSensitiveOrder = mockedOrder.IsOrderSensitiveBadExample();
+
+        // Assert
+        isSensitiveOrder.Should().BeTrue();
+    }
+    
+    [Fact]
+    public void IsSensitiveOrder_GoodExample_ShouldBeTrue()
+    {
+        // Arrange
+        var mockedOrder = MockOrder(
+            "ARG",
+            true,
+            true,
+            1500);
+
+        // Act
+        var isSensitiveOrder = mockedOrder.IsOrderSensitiveGoodExample();
+
+        // Assert
+        isSensitiveOrder.Should().BeTrue();
+    }
     
     private Order MockOrder(
         string shippingCountry,
