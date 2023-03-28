@@ -1,4 +1,4 @@
-namespace SpecificationDemo.Features.Feature1.Models;
+namespace SpecificationDemo.Features.Feature1.Domain;
 
 public class Address
 {

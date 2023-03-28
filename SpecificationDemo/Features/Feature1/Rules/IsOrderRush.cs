@@ -1,4 +1,4 @@
-using SpecificationDemo.Features.Feature1.Models;
+using SpecificationDemo.Features.Feature1.Domain;
 using SpecificationDemo.Shared.Extensions;
 using SpecificationDemo.Shared.Specifications.Interfaces;
 

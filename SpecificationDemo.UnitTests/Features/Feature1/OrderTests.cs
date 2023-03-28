@@ -1,6 +1,6 @@
 using AutoFixture;
 using FluentAssertions;
-using SpecificationDemo.Features.Feature1.Models;
+using SpecificationDemo.Features.Feature1.Domain;
 
 namespace SpecificationDemo.UnitTests.Features.Feature1;
 

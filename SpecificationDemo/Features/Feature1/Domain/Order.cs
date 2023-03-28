@@ -1,6 +1,6 @@
 using SpecificationDemo.Features.Feature1.Rules;
 
-namespace SpecificationDemo.Features.Feature1.Models;
+namespace SpecificationDemo.Features.Feature1.Domain;
 
 public class Order
 {
