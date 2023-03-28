@@ -7,8 +7,5 @@ public class IsOrderDomestic : ISpecification<Order>
 {
     private const string DomesticCountryCode = "ESP";
     
-    public bool IsSatisfiedBy(Order subject)
-    {
-        return subject.ShippingAddress?.Country == DomesticCountryCode;
-    }
+    public bool IsSatisfiedBy(Order subject) => subject.ShippingAddress?.Country == DomesticCountryCode;
 }

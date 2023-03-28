@@ -5,10 +5,8 @@ namespace SpecificationDemo.Features.Feature1.Rules;
 
 public class IsOrderHazardous : ISpecification<Order>
 {
-    public bool IsSatisfiedBy(Order subject)
-    {
-        return subject
+    public bool IsSatisfiedBy(Order subject) => 
+        subject
             .Items
             .Any(item => item.ContainsHazardousMaterial);
     }
-}
