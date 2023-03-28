@@ -8,7 +8,13 @@ public abstract class CompositeSpecification<TCandidate> : IResultSpecification<
         protected readonly List<ISpecification<TCandidate>> ChildSpecifications = new();
 
         protected readonly List<IResultSpecification<TCandidate>> ChildResultSpecifications = new();
-        
+
+        protected CompositeSpecification(
+            ISpecification<TCandidate> candidate)
+        {
+            ChildSpecifications.Add(candidate);
+        }
+
         protected CompositeSpecification(
             ISpecification<TCandidate> firstSpecification, 
             ISpecification<TCandidate> secondSpecification)
@@ -24,24 +30,8 @@ public abstract class CompositeSpecification<TCandidate> : IResultSpecification<
             ChildResultSpecifications.Add(firstSpecification);
             ChildResultSpecifications.Add(secondSpecification);
         }
-        
-        protected CompositeSpecification(IEnumerable<ISpecification<TCandidate>> rulesToValidate) => ChildSpecifications.AddRange(rulesToValidate);
-        
-        protected CompositeSpecification(IEnumerable<IResultSpecification<TCandidate>> rulesToValidate) => ChildResultSpecifications.AddRange(rulesToValidate);
-        
-        public void AddRule(ISpecification<TCandidate> childSpecification) => ChildSpecifications.Add(childSpecification);
-        
-        public void AddRule(IResultSpecification<TCandidate> childSpecification) => ChildResultSpecifications.Add(childSpecification);
-        
-        public void AddRuleRange(IEnumerable<ISpecification<TCandidate>> rulesToAdd) => ChildSpecifications.AddRange(rulesToAdd);
-        
-        public void AddRuleRange(IEnumerable<IResultSpecification<TCandidate>> rulesToAdd) => ChildResultSpecifications.AddRange(rulesToAdd);
-        
-        public abstract bool IsPrimitiveSatisfiedBy(TCandidate subject);
 
-        public IReadOnlyCollection<ISpecification<TCandidate>> PrimitiveChildren => ChildSpecifications.AsReadOnly();
-        
-        public IReadOnlyCollection<IResultSpecification<TCandidate>> Children => ChildResultSpecifications.AsReadOnly();
+        public abstract bool IsPrimitiveSatisfiedBy(TCandidate subject);
 
         public abstract Result IsSatisfiedBy(TCandidate entityToEvaluate);
     }

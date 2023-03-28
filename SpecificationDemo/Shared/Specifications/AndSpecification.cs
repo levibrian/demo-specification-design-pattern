@@ -12,10 +12,12 @@ public class AndSpecification<T> : CompositeSpecification<T>
     {
     }
      
-    public AndSpecification(IEnumerable<ISpecification<T>> rulesToValidate) : base(rulesToValidate)
+    public AndSpecification(
+        IResultSpecification<T> firstSpecification, 
+        IResultSpecification<T> secondSpecification) : base(firstSpecification, secondSpecification)
     {
     }
-
+    
     public override bool IsPrimitiveSatisfiedBy(T subject)
     {
         if (!ChildSpecifications.Any()) return true;
@@ -25,7 +27,7 @@ public class AndSpecification<T> : CompositeSpecification<T>
                 .Select(rule => 
                     rule.IsPrimitiveSatisfiedBy(subject));
 
-        return rulesResult.Any(expression => expression);
+        return rulesResult.All(expression => expression);
     }
 
     public override Result IsSatisfiedBy(T subject)

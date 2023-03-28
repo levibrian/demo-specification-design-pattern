@@ -12,10 +12,12 @@ public class OrSpecification<T> : CompositeSpecification<T>
     {
     }
         
-    public OrSpecification(IEnumerable<ISpecification<T>> rulesToValidate) : base(rulesToValidate)
+    public OrSpecification(
+        IResultSpecification<T> firstSpecification, 
+        IResultSpecification<T> secondSpecification) : base(firstSpecification, secondSpecification)
     {
     }
-    
+
     public override bool IsPrimitiveSatisfiedBy(T subject)
     {
         if (!ChildSpecifications.Any()) return true;
